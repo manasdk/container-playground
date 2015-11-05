@@ -6,17 +6,14 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-    config.vm.box = "ubuntu-14-04-dev-x86_64"
+    config.vm.box = "puppetlabs/ubuntu-14.04-64-nocm"
 
-    # The url from where the 'config.vm.box' box will be fetched if it
-    # doesn't already exist on the user's system.
-    config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
-
-    config.vm.define "lxc-playground" do |ubuntuhost|
+    config.vm.define "container-playground" do |ubuntuhost|
     end
     config.vm.provider :virtualbox do |vb|
-      vb.name = "lxc-playground"
-      vb.memory = 1024
+      vb.name = "cntr-plgd"
+      vb.memory = 2048
+      vb.cpus = 2
     end
 
     # Configure a private network
