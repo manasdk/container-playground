@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     # Configure a private network
-    config.vm.network "private_network", ip: "172.168.30.10"
+    config.vm.network "private_network", ip: "172.168.35.12"
 
     # Start shell provisioning
     config.vm.provision :shell, :path => "bootstrap.sh"
